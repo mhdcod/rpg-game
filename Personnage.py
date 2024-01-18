@@ -1,4 +1,4 @@
-# from tabulate import tabulate
+from tabulate import tabulate
 
 class Personnage:
     def __init__(self, nom, classe, niveau, points_de_vie, force, intelligence, arme=None):
@@ -12,14 +12,6 @@ class Personnage:
         self.en_vie = True
 
     def afficher_info(self):
-
-
-        print(f"Nom: {self.nom}")
-        print(f"Classe: {self.classe}")
-        print(f"Niveau: {self.niveau}")
-        print(f"Points de vie: {self.points_de_vie}")
-        print(f"Force: {self.force}")
-        print(f"Intelligence: {self.intelligence}")
          
         etat = "En vie" if self.en_vie else "Mort"
 
@@ -35,7 +27,7 @@ class Personnage:
             ["État", etat]
         ]
 
-        #print(tabulate(table, tablefmt="fancy_grid"))
+        print(tabulate(table, tablefmt="fancy_grid"))
 
     def attaquer(self, cible):
         if self.arme:
